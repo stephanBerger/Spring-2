@@ -19,34 +19,12 @@ public class MyProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(MyProjectApplication.class, args);
     }
-
-//    @RequestMapping("/hello/{name}")
-//    @ResponseBody
-//    public String hello(@PathVariable String name) {
-//        return "Hello " + name;
-//    }
-//    @RequestMapping("/hellow/{name}")
-//    @ResponseBody
-//    public String hellow(@PathVariable String name, @RequestParam String title) {
-//        return "Hello " + name + ", " + title;
-//    }
-//    @RequestMapping("/helloww/{name}")
-//    @ResponseBody
-//    public String helloww(@PathVariable String name, @RequestParam(defaultValue="") String title) {
-//        if (title.length() > 0) {
-//            return "Hello " + name + ", " + title;
-//        }
-//        else {
-//            return "Hello " + name;
-//        }
-//       
-//    }
     
     @RequestMapping("/doctor/{id}")
     @ResponseBody
     public ResponseEntity<?> getDoctorId(@PathVariable int id) {
     	String rep ="";
-    	if (id<9) {
+    	if (id < 9) {
     		return new ResponseEntity<>("303 See Other.",HttpStatus.SEE_OTHER);
     	}
     	
